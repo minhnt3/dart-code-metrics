@@ -26,6 +26,7 @@ void main() {
         'no-boolean-literal-compare': <String, Object>{},
         'prefer-on-push-cd-strategy': <String, Object>{},
         'prefer-trailing-comma': <String, Object>{},
+        'regex-exclude': <String, Object>{},
         'avoid-late-keyword': <String, Object>{},
         'member-ordering-extended': <String, Object>{},
         'avoid-non-null-assertion': <String, Object>{},
@@ -80,6 +81,7 @@ void main() {
         'prefer-single-widget-per-file',
         'prefer-trailing-comma',
         'provide-correct-intl-args',
+        'regex-exclude',
       ]),
     );
   });

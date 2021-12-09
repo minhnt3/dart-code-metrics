@@ -43,3 +43,23 @@ Future<void> main() async {
   // And CodeClimateReporter produces reports that are widely understood by various CI tools
   // If none of these fits your case you can always access raw analysis info via results() method of runner and process it any way you see fit
 }
+
+void firstFunction(
+  String firstArgument,
+  String secondArgument,
+  String thirdArgument,
+) {
+  print(firstArgument);
+  print(secondArgument);
+  print(thirdArgument);
+
+  return;
+}
+
+void secondFunction() {
+  firstFunction(
+    'Colors',
+    'some other string',
+    'and another string for length exceed',
+  ); // LINT
+}
