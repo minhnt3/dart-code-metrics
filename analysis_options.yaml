@@ -58,6 +58,12 @@ dart_code_metrics:
         exclude:
           - test/**
     - prefer-trailing-comma
+    - regex-exclude:
+        exclude:
+          - example/example.dart
+        regexs: 
+          - ^Colors.
+          - ^ColorName.
 
 linter:
   rules:

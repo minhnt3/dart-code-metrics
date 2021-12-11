@@ -50,10 +50,10 @@ class _Visitor extends RecursiveAstVisitor<void> {
   }
 
   void _visitNodeList(
-    Iterable<AstNode> nodes,
-    Token leftBracket,
-    Token rightBracket,
-  ) {
+      Iterable<AstNode> nodes,
+      Token leftBracket,
+      Token rightBracket,
+      ) {
     if (nodes.isEmpty) {
       return;
     }
@@ -62,21 +62,21 @@ class _Visitor extends RecursiveAstVisitor<void> {
 
     if (last.endToken.next?.type != TokenType.COMMA &&
         (!_isLastItemMultiLine(last, leftBracket, rightBracket) &&
-                _getLineNumber(leftBracket) != _getLineNumber(rightBracket) ||
+            _getLineNumber(leftBracket) != _getLineNumber(rightBracket) ||
             _breakpoint != null && nodes.length >= _breakpoint!)) {
       _nodes.add(last);
     }
   }
 
   bool _isLastItemMultiLine(
-    AstNode node,
-    Token leftBracket,
-    Token rightBracket,
-  ) =>
+      AstNode node,
+      Token leftBracket,
+      Token rightBracket,
+      ) =>
       _getLineNumber(leftBracket) ==
           _lineInfo.getLocation(node.offset).lineNumber &&
-      _getLineNumber(rightBracket) ==
-          _lineInfo.getLocation(node.end).lineNumber;
+          _getLineNumber(rightBracket) ==
+              _lineInfo.getLocation(node.end).lineNumber;
 
   int _getLineNumber(SyntacticEntity entity) =>
       _lineInfo.getLocation(entity.offset).lineNumber;

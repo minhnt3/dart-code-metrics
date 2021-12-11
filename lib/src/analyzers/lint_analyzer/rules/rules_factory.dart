@@ -38,6 +38,7 @@ import 'rules_list/prefer_on_push_cd_strategy/prefer_on_push_cd_strategy_rule.da
 import 'rules_list/prefer_single_widget_per_file/prefer_single_widget_per_file_rule.dart';
 import 'rules_list/prefer_trailing_comma/prefer_trailing_comma_rule.dart';
 import 'rules_list/provide_correct_intl_args/provide_correct_intl_args_rule.dart';
+import 'rules_list/regex_exclude/regex_exclude_rule.dart';
 
 final _implementedRules = <String, Rule Function(Map<String, Object>)>{
   AlwaysRemoveListenerRule.ruleId: (config) => AlwaysRemoveListenerRule(config),
@@ -103,6 +104,7 @@ final _implementedRules = <String, Rule Function(Map<String, Object>)>{
   PreferTrailingCommaRule.ruleId: (config) => PreferTrailingCommaRule(config),
   ProvideCorrectIntlArgsRule.ruleId: (config) =>
       ProvideCorrectIntlArgsRule(config),
+  RegexExcludeRule.ruleId: (config) => RegexExcludeRule(config),
 };
 
 Iterable<Rule> get allRules =>
